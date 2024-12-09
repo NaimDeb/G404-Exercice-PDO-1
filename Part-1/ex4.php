@@ -2,7 +2,10 @@
 
 require_once("./sql/connect_db.php");
 
-$sql = "SELECT * FROM `clients` WHERE cardNumber IS NOT NULL";
+$sql = "SELECT * FROM clients
+INNER JOIN cards ON clients.cardNumber=cards.cardNumber
+INNER JOIN cardtypes ON cards.cardTypesId=cardtypes.id
+WHERE cardtypes.type LIKE 'Fidélité'";
 
 try {
 
