@@ -83,6 +83,7 @@
 <body>
     <header>
         <h1>Gestion des Patients</h1>
+        <button> <a href="./ex2-liste-patients.php">Liste des patients</a> </button>
         <button> <a href="./ex1-ajout-patient.php">Créer un patient</a> </button>
     </header>
     <main>

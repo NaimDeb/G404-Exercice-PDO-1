@@ -1,5 +1,4 @@
 <?php
-
    // le try catch, permet d'essayer un bout de code, et si il détecte le moindre problème il nous retourne une exception
    // on peut traiter cette exception pour avoir un message d'erreur détaillé
    try

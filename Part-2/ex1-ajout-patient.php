@@ -1,43 +1,15 @@
 <?php
-$allDone = false;
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-// Erreur 1, vérifier tt les post
-if (!isset($_POST["lastName"],$_POST["firstName"],$_POST["birthdate"], $_POST["phone"], $_POST["mail"])){
-    header("Location: ex1-ajout-patient.php?status=1");
-    return;
-}
-// Erreur 2, vérifier si empty
-if (
-    empty($_POST['firstName']) ||
-    empty($_POST['lastName']) ||
-    empty($_POST['birthdate']) ||
-    empty($_POST['phone']) ||
-    empty($_POST['mail'])
-) {
-    header('location: ex1-ajout-patient.php?status=2');
-    return;
-}
+if (isset($_GET["status"]) && $_GET["status"] == "success") {
 
-$firstName = htmlspecialchars(trim($_POST['firstName']));
-$lastName = htmlspecialchars(trim($_POST['lastName']));
-$birthdate = htmlspecialchars(trim($_POST['birthdate']));
-$phone = htmlspecialchars(trim($_POST['phone']));
-$mail = htmlspecialchars(trim($_POST['mail']));
-
-
-$allDone = true;
-
-
-
-}
-
+header("refresh:5;url=./index.php");}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire</title>
@@ -45,13 +17,9 @@ $allDone = true;
 <body style="margin: auto; width:fit-content ";>
 
 
-    <?php 
-    if(!$allDone){
-    ?>
-
 
     <h1>Formulaire d'inscription</h1>
-    <form action="" method="post">
+    <form action="./process/process_create_patient.php" method="post">
         <!-- Nom -->
         <label for="lastName">Nom :</label>
         <input type="text" id="lastName" name="lastName" required>
@@ -94,28 +62,15 @@ $allDone = true;
         echo "<p style='color:red;'> Veuillez remplir tous les champs </p>";
     }
 
-};
 
     if (isset($_GET["status"]) && $_GET["status"] == "success") {
         echo "<p style='color:green;'> Succès ! </p>";
-        echo "<br>";
-        echo $firstName;
-        echo "<br>";
-        echo $lastName;
-        echo "<br>";
-        echo $birthdate;
-        echo "<br>";
-        echo $phone;
-        echo "<br>";
-        echo $mail;
-        echo "<br>";
-
 
         // sendToSql();
         echo "<p> Vous allez être redirigé dans quelques secondes, si ça ne marche pas, <a href='./index.php'> cliquez ici !</a></p>";
 
         // Marche pas
-        // header("refresh:5;Location: ./index.php");
+        
     }
 
 

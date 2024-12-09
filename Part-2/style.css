@@ -1,0 +1,122 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header .btn-create {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+header .btn-create:hover {
+    background-color: #ffd633;
+}
+
+/* Main container */
+main {
+    padding: 20px;
+}
+
+/* Patient cards */
+.patient-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.patient-card {
+    background-color: #e6f7ff;
+    padding: 15px;
+    border: 1px solid #0073e6;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* Trois cartes par ligne */
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.patient-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.patient-card ul li {
+    margin-bottom: 5px;
+}
+
+.patient-card ul li a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.patient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Patient full card */
+.patient-details {
+    background-color: #e6f7ff;
+    padding: 20px;
+    border: 1px solid #0073e6;
+    border-radius: 8px;
+    width: 500px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.patient-full-card h2 {
+    margin-bottom: 20px;
+    color: #0073e6;
+}
+
+.patient-full-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.patient-full-card ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
